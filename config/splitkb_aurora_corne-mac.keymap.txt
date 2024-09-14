@@ -22,12 +22,12 @@
 // |  TAB |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  ;  | ESC |
 // | MO-4 |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  |  '   |
 // | SHFT |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  | RSFT |
-//                    | CTL | MO-3| SPC |   |MT-ENT|MO-1 | MO-2 |
+//                    | GUI | MO-3| SPC |   |MT-ENT|MO-1 | MO-2 |
                         bindings = <
    &kp TAB   &kp Q &kp W &kp F &kp P &kp B    &kp J &kp L &kp U    &kp Y   &kp SEMI    &kp ESC
    &mo 4 &kp A &kp R &kp S &kp T &kp G    &kp M &kp N &kp E &kp I &kp O &kp APOS
    &kp LSHFT &kp Z &kp X &kp C &kp D &kp V    &kp K &kp H &kp CMMA &kp DOT &kp FSLH &kp RSFT
-                   &kp LCTRL &mo 3 &kp SPACE   &mt LSHFT ENTER  &mo 1 &mo 2
+                   &kp LGUI &mo 3 &kp SPACE   &mt LSHFT ENTER  &mo 1 &mo 2
                         >;
                 };
 
@@ -37,12 +37,12 @@
 // |  TAB |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  ;  | ESC |
 // | MO-4 | MT-A|MT-R |MT-S |MT-T |  G  |   |  M  |MT-N  |MT-E |MT-I |MT-O |  '   |
 // | SHFT |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  | RSFT |
-//                    | CTRL| MO-3| SPC |   | ENT | trans| MO-2 |
+//                    | GUI | MO-3| SPC |   | ENT | trans| MO-2 |
                         bindings = <
    &kp TAB   &kp Q &kp W &kp F &kp P &kp B    &kp J &kp L &kp U    &kp Y   &kp SEMI    &kp BSPC
-   &mo 4 &mt LSHFT A &mt LCTRL R &mt LGUI S &mt LALT T &kp G    &kp M &mt LALT N &mt LGUI E &mt LCTRL I &mt LSHFT O &kp APOS
+   &mo 4 &mt LSHFT A &mt LCTRL R &mt LALT S &mt LGUI T &kp G    &kp M &mt LGUI N &mt LALT E &mt LCTRL I &mt LSHFT O &kp APOS
    &kp LSHFT &kp Z &kp X &kp C &kp D &kp V    &kp K &kp H &kp CMMA &kp DOT &kp FSLH &kp RSFT
-                   &kp LCTRL &mo 3 &kp SPACE   &kp ENTER &trans &trans 
+                   &kp LGUI &mo 3 &kp SPACE   &kp ENTER &trans &trans 
                         >;
                 };
                 
@@ -80,27 +80,27 @@
                         label = "NAV";
 // -----------------------------------------------------------------------------------------
 // |  ESC |     |     |     |     |     |   |     |BSPC | UP  | Del |PgUp | Home |
-// |trans |SHFT |LCTRL|LALT |LGUI |     |   |A-Lft|Left |Down |Rght |A-Rgt| End  |
+// |trans |SHFT |LCTL |LALT |LGUI |     |   |A-Lft|Left |Down |Rght |A-Rgt| End  |
 // | SHFT |     |     |     |     |     |   |Caps |     |     |     |     |      |
-//                    | GUI |     | SPC |   |C-BS |     |     |
+//                    | GUI |     | SPC |   |A-BS |     |     |
                         bindings = <
    &kp ESC   &none   &none  &none    &none    &none       &none     &kp BSPC  &kp UP  	&kp DEL &kp PG_UP &kp HOME
-   &trans &kp LSHFT  &kp LCTRL &kp LGUI &kp LALT &none     &kp LA(LEFT) &kp LEFT &kp DOWN  &kp RIGHT &kp LA(RIGHT) &kp END
+   &trans &kp LSHFT  &kp LCTL &kp LALT &kp LGUI &none     &kp LA(LEFT) &kp LEFT &kp DOWN  &kp RIGHT &kp LA(RIGHT) &kp END
    &kp LSHFT &none   &none  &none    &none    &none       &kp CAPS &none  &none  &none &kp PG_DN &none
-                    	    &kp LCTRL &none   &kp SPACE    &kp LC(BSPC)   &kp BSPC    &none
+                    	    &kp LGUI &none   &kp SPACE    &kp LA(BSPC)   &kp BSPC    &none
                         >;
                 };
                 
                 func_layer {
                         label = "FUNC";
 // -----------------------------------------------------------------------------------------
-// | RESET|boot |     |     |     |     |   |     |  F7 |  F8 | F9  | F10 | F11  |
+// |      |     |     |     |     |     |   |     |  F7 |  F8 | F9  | F10 | F11  |
 // |      |     |     |     |     |     |   |     |  F4 |  F5 | F6  |     |      |
 // | SHFT |     |     |     |     |     |   |     |  F1 |  F2 | F3  |     |      |
 //                    |     |     |     |   |     |     |     |
                         bindings = <
-   &sys_reset &bootloader &none &none &none &none   &none &kp F7 &kp F8 &kp F9 &kp F10 &kp F11
-   &none  &none &none &none &none &none   &none &kp F4 &kp F5 &kp F6 &none 	&none
+   &none 	 &none &none &none &none &none   &none &kp F7 &kp F8 &kp F9 &kp F10 &kp F11
+   &none 	 &none &none &none &none &none   &none &kp F4 &kp F5 &kp F6 &none 	&none
    &kp LSHFT &none &none &none &none &none   &none &kp F1 &kp F2 &kp F3 &none 	&none
                 		 &none &none &none   &none &none &none
                         >;
