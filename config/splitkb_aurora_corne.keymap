@@ -80,12 +80,12 @@
                         label = "NAV";
 // -----------------------------------------------------------------------------------------
 // |  ESC |     |     |     |     |     |   |     |BSPC | UP  | Del |PgUp | Home |
-// |trans |SHFT |LCTRL|LALT |LGUI |     |   |A-Lft|Left |Down |Rght |A-Rgt| End  |
+// |trans |SHFT |LCTRL|LALT |LGUI |     |   |C-Lft|Left |Down |Rght |C-Rgt| End  |
 // | SHFT |     |     |     |     |     |   |Caps |     |     |     |     |      |
 //                    | GUI |     | SPC |   |C-BS |     |     |
                         bindings = <
    &kp ESC   &none   &none  &none    &none    &none       &none     &kp BSPC  &kp UP  	&kp DEL &kp PG_UP &kp HOME
-   &trans &kp LSHFT  &kp LCTRL &kp LGUI &kp LALT &none     &kp LA(LEFT) &kp LEFT &kp DOWN  &kp RIGHT &kp LA(RIGHT) &kp END
+   &trans &kp LSHFT  &kp LCTRL &kp LGUI &kp LALT &none     &kp LC(LEFT) &kp LEFT &kp DOWN  &kp RIGHT &kp LC(RIGHT) &kp END
    &kp LSHFT &none   &none  &none    &none    &none       &kp CAPS &none  &none  &none &kp PG_DN &none
                     	    &kp LCTRL &none   &kp SPACE    &kp LC(BSPC)   &kp BSPC    &none
                         >;
